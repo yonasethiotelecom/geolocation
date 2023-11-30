@@ -35,7 +35,7 @@ const Map: React.FC<MapProps> = ({ latitude, longitude }) => {
   const SearchLocation: React.FC = () => {
     return (
       <div className="search-location">
-        <input type="text" placeholder="Search Location"  />
+        <input type="text"  placeholder="Search Location"  />
       </div>
     );
   };
@@ -131,8 +131,13 @@ const Map: React.FC<MapProps> = ({ latitude, longitude }) => {
             center={markerCoord}
             radius={100} // Set the radius to 10 (adjust as needed)
             fillColor="yellow"
-            fillOpacity={0.4}
-          />
+            fillOpacity={0.3}
+          >
+            <Popup>
+            circle <br /> {index} .
+          </Popup>
+          </CircleMarker>
+          
         ))}
       </MapContainer>
     </div>
